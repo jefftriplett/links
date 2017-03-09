@@ -1,0 +1,25 @@
+---
+# Layouts must stay in HTML
+---
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <div class="container">
+      <header class="header row">
+        {% include header.html %}
+      </header>
+
+      <div class="row">
+        <div class="tweleve columns">
+          {{ content }}
+        </div>
+      </div>
+
+      <footer class="footer row">
+        {% include footer.html %}
+      </footer>
+    </div>
+    {% include analytics.html %}
+  </body>
+</html>
