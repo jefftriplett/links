@@ -1,8 +1,8 @@
 assets:
   cachebust: hard
 
-title: Jeff Triplett's Links
-name: Jeff Triplett's Links
+title: Jeff Triplett's Link Blog
+name: Jeff Triplett's Link Blog
 email: jeff.triplett@gmail.com
 description: >
   Thoughts about life, technology, development, and blog by Jeff Triplett.
@@ -14,6 +14,26 @@ permalink: /:title/
 future: true
 paginate: 100
 
+gems:
+  # - jekyll-archives
+  # - jekyll-coffeescript
+  - jekyll-crosspost-to-medium
+  - jekyll-feed
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
+  - octopress-autoprefixer
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+include:
+  - _pages
+
 # Markdown
 markdown: kramdown
 kramdown:
@@ -23,24 +43,37 @@ sass:
   sass_dir: _sass
   style: compressed
 
-github_username:  jefftriplett
+# SEO Plugin settings
+
+author:
+  twitter: webology
+
+facebook:
+  app_id: 182545102225662
+
+logo: /assets/images/me-gliphy.png
+
+social:
+  name: Jeff Triplett
+  links:
+    - https://github.com/jefftriplett
+    - https://keybase.io/jefftriplett
+    - https://medium.com/@webology
+    - https://open.spotify.com/user/jefftriplett
+    - https://pinboard.in/u:jefftriplett
+    - https://twitter.com/webology
+    - https://www.facebook.com/jefftriplett
+    - https://www.flickr.com/photos/webology
+    - https://www.instagram.com/jefftriplett/
+
+twitter:
+  username: webology
+
+# Needed for the default template... not sure if they are used anywhere else
+github_username: jefftriplett
 twitter_username: webology
 
-# Build settings
-#theme: minima
-gems:
-  # - jekyll-archives
-  # - jekyll-coffeescript
-  - jekyll-crosspost-to-medium
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-redirect-from
-  - jekyll-seo-tag
-  - jemoji
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-
-include:
-  - _pages
+# Custom vars
+version: 0.9.2
+font-awesome: 4.7.0
+google-fonts-family: PT+Serif:400,400italic,700|PT+Sans:400|Alegreya
