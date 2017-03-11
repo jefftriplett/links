@@ -3,8 +3,7 @@ layout: default
 title: Home
 permalink: /
 redirect_from:
-  - /blog/
-  - /posts/
+  - /links/
 ---
 
 <section class="posts">
@@ -16,15 +15,12 @@ redirect_from:
       {% endif %}
       <article class="row">
         <a href="{{ post.external_url }}" rel="nofollow">
-          <span class="post-title two-thirds column {% if post.draft %}draft{% endif %}">
+          <span class="post-title column {% if post.draft %}draft{% endif %}">
             {{ post.title | markdownify | remove:'<p>' | remove:'</p>' }}
             {% comment %}
             <i class="fa fa-external-link" aria-hidden="true"></i>
             {% endcomment %}
           </span>
-          <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date one-third column">
-            {{ post.date | date:"%B %e" }}
-          </time>
         </a>
       </article>
     {% endunless %}
