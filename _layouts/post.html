@@ -5,4 +5,11 @@ layout: default
 <article class="post">
   <h1 class="post-title">{{ page.title | markdownify | remove:'<p>' | remove:'</p>' }}</h1>
   {{ content }}
+
+<script type="text/javascript">
+  window.location.href = "{{ post.external_url }}"
+</script>
+
+If you are not redirected, please visit <a href="{{ post.external_url }}">this</a> link!
+
 </article>
