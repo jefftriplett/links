@@ -15,7 +15,7 @@ redirect_from:
         <h2 class="category-title">{{ year }}</h2>
       {% endif %}
       <article class="row">
-        <a href="{{ post.external_url }}">
+        <a href="{{ post.external_url }}" rel="nofollow">
           <span class="post-title two-thirds column {% if post.draft %}draft{% endif %}">
             {{ post.title | markdownify | remove:'<p>' | remove:'</p>' }}
             {% comment %}
