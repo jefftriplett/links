@@ -1,6 +1,7 @@
 ---
 categories: Links
 date: 2017-03-06 18:53:32
+external_url: http://www.vulture.com/2017/03/david-letterman-in-conversation.html
 layout: post
 tags:
 - comedy
@@ -16,7 +17,6 @@ tags:
 - '&amp;amp;amp;quot;david'
 - interview
 title: David Letterman on Life After TV, Late Night Today, and the Man He Calls Trumpy
-url: http://www.vulture.com/2017/03/david-letterman-in-conversation.html
 ---
 
 I miss Dave.
