@@ -1,0 +1,21 @@
+<div class="one-third column">
+  <h2 class="title">
+    <a href="/">
+      {{ site.title }}
+    </a>
+    <small>{{ site.tagline }}</small>
+  </h2>
+</div>
+<div class="two-thirds column">
+  <nav>
+    <ul>
+    {% for link in site.data.navigation.links %}
+      {% if link.show_in_header == true %}
+        <li>
+          <a href="{{ link.url }}"{% if link.aria-label %} aria-label="{{ link.aria-label }}" title="{{ link.aria-label }}"{% endif %}>{{ link.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </nav>
+</div>
