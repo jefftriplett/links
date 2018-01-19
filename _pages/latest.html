@@ -1,0 +1,49 @@
+---
+layout: default
+title: Latest
+permalink: /latest/
+sitemap: false
+---
+
+{% comment%}
+Here we generate all the categories.
+{% endcomment%}
+
+<h1 class="page-title">
+  {{ page.title }}
+</h1>
+
+{% assign currentYear = site.time | date: "%Y" %}
+{% assign currentWeek = site.time | date: "%W" %}
+
+<section class="posts">
+  {% for post in site.posts %}
+    {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% assign postYear = post.date | date: "%Y" %}
+    {% assign postWeek = post.date | date: "%W" %}
+    {% unless post.hidden %}
+      {% if currentYear == postYear and currentWeek == postWeek %}
+        <article class="row {# if post.shared != true #}hidden{# endif #}">
+          <a href="{{ post.external_url }}" rel="nofollow">
+            <span class="post-title column {% if post.draft %}draft{% endif %}">
+              {% comment %}
+              <h4>{{ post.title | markdownify | remove:'<p>' | remove:'</p>' }} <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+              {% endcomment %}
+              <h4>{{ post.title }} &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+              {{ post.content | markdownify }}
+            </span>
+          </a>
+          {% if post.categories != empty %}
+          <div>
+            <strong>Tags: </strong>
+            {% for tag in post.categories %}
+              <span><a>{{ tag }}</a></span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+        <hr>
+      {% endif %}
+    {% endunless %}
+    {% capture lastyear %}{{ post.date | date: '%Y' }}{% endcapture %}
+  {% endfor %}

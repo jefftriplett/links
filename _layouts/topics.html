@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<article class="post">
+  <h1 class="post-title">
+    {{ page.category }}
+  </h1>
+
+  <div class="posts">
+    {% for post in site.categories[page.category] %}
+      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% unless post.hidden %}
+        {% if year != lastyear %}
+          <h3 class="category-title">{{ year }}</h3>
+        {% endif %}
+        <article class="row {% if post.shared != true %}hidden{% endif %}">
+          <a href="{{ post.external_url }}" rel="nofollow">
+            <span class="post-title column {% if post.draft %}draft{% endif %}">
+              <h4>{{ post.title | markdownify | remove:'<p>' | remove:'</p>' }}</h4>
+
+              {{ post.content | markdownify}}
+
+              <a href="{{ post.url }}">:sparkles:</a>
+              {% comment %}
+              <i class="fa fa-external-link" aria-hidden="true"></i>
+              {% endcomment %}
+            </span>
+          </a>
+          {% if post.categories %}
+          <div>
+            <strong>Tags: </strong>
+            {% for tag in post.categories %}
+              <span><a>{{ tag }}</a></span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+      {% endunless %}
+      {% capture lastyear %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% endfor %}
+  </div>
+</article>
