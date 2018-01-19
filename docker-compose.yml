@@ -7,7 +7,6 @@ services:
       context: .
       dockerfile: cron/Dockerfile
     environment:
-      - PINBOARD_TOKEN=jefftriplett:5DE11D1EF4280F7A838B
       - POST_FOLDER=/srv/jekyll/_posts
     volumes:
       - .:/srv/jekyll
