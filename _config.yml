@@ -10,9 +10,10 @@ baseurl: ""
 url: https://jefftriplett.com
 enforce_ssl: "jefftriplett.com"
 relative_permalinks: false
-permalink: /:title/
+permalink: :year/:title/  # permalink: date
 future: true
-paginate: 100
+paginate: 25
+paginate_path: "/links/page:num/"
 
 gems:
   # - jekyll-archives
@@ -28,8 +29,17 @@ gems:
   - octopress-autoprefixer
 
 exclude:
+  - .db
+  - .lock
+  - .py
+  - cron/*
+  - docker-compose.yml
+  - Dockerfile
   - Gemfile
   - Gemfile.lock
+  - Pipfile
+  - Pipfile.lock
+  - Procfile
 
 include:
   - _pages
@@ -42,6 +52,16 @@ kramdown:
 sass:
   sass_dir: _sass
   style: compressed
+
+collections:  # process the _data folder
+  components:
+    output: false
+  links:
+    output: true
+    permalink: /:collection/:name/
+  topics:
+    output: true
+    permalink: /:collection/:name/
 
 # SEO Plugin settings
 
