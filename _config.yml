@@ -7,18 +7,19 @@ email: jeff.triplett@gmail.com
 description: >
   Thoughts about life, technology, development, and blog by Jeff Triplett.
 baseurl: ""
-url: https://jefftriplett.com
-enforce_ssl: "jefftriplett.com"
+url: http://link.jefftriplett.com
+# enforce_ssl: "links.jefftriplett.com"
 relative_permalinks: false
 permalink: :year/:title/  # permalink: date
 future: true
 paginate: 25
 paginate_path: "/links/page:num/"
 
-gems:
+plugins:
   # - jekyll-archives
   # - jekyll-coffeescript
-  - jekyll-crosspost-to-medium
+  # - jekyll-crosspost-to-medium
+  # - octopress-autoprefixer
   - jekyll-feed
   - jekyll-mentions
   - jekyll-paginate
@@ -26,7 +27,6 @@ gems:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jemoji
-  - octopress-autoprefixer
 
 exclude:
   - .db
@@ -37,6 +37,7 @@ exclude:
   - Dockerfile
   - Gemfile
   - Gemfile.lock
+  - Makefile
   - Pipfile
   - Pipfile.lock
   - Procfile
@@ -56,9 +57,6 @@ sass:
 collections:  # process the _data folder
   components:
     output: false
-  links:
-    output: true
-    permalink: /:collection/:name/
   topics:
     output: true
     permalink: /:collection/:name/

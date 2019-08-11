@@ -4,17 +4,27 @@ links:
 
   - title: About
     url: /about/
-    show_in_header: true
+    show_in_header: false
     show_in_footer: true
 
   - title: Posts
     url: /
+    show_in_header: false
+    show_in_footer: false
+
+  - title: Latest
+    url: /latest/
+    show_in_header: true
+    show_in_footer: false
+
+  - title: Last Week
+    url: /last_week/
     show_in_header: true
     show_in_footer: false
 
   - title: Projects
     url: /projects/
-    show_in_header: true
+    show_in_header: false
     show_in_footer: false
 
   - title: Colophon
@@ -24,7 +34,7 @@ links:
 
   - title: Topics
     url: /topics/
-    show_in_header: false
+    show_in_header: true
     show_in_footer: false
 
   - title: Now

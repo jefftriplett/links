@@ -1,5 +1,6 @@
-<nav>
-  <ul>
+<div class="bottom-footer">
+<nav class="sans">
+  <ul class="site-nav">
   {% for link in site.data.navigation.links %}
     {% if link.show_in_footer == true %}
       <li>
@@ -13,3 +14,4 @@
   &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> Jeff Triplett
   <span>v{{ site.version }}</span>
 </section>
+</div>

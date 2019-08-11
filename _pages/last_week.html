@@ -1,12 +1,14 @@
 ---
 layout: default
-title: Latest
-permalink: /latest/
+title: Last Week
+permalink: /last_week/
 sitemap: false
 ---
 
 {% assign currentYear = site.time | date: "%Y" %}
-{% assign currentWeek = site.time | date: "%W" %}
+{% assign currentWeek = site.time | date: "%W" | minus: 1 %}
+
+{% if currentWeek < 10 %}{% assign currentWeek = currentWeek | prepend: '0' %}{% endif %}
 
 <h1 class="page-title">
   {{ page.title }}: Week {{ currentWeek }}

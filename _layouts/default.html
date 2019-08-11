@@ -5,15 +5,13 @@
 <html lang="en">
   {% include head.html %}
   <body>
-    <div class="container">
+    <div class="main-container">
       <header class="header row">
         {% include header.html %}
       </header>
 
-      <div class="row">
-        <div class="tweleve columns">
-          {{ content }}
-        </div>
+      <div class="inner-container">
+        {{ content }}
       </div>
 
       <footer class="footer row">
